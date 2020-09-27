@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/bong.wav</file>
+        <file>images/center1.png</file>
+        <file>images/cenWin0.png</file>
+        <file>images/cover1.png</file>
+        <file>images/fail.wav</file>
+        <file>images/icon.png</file>
+        <file>images/mine0.png</file>
+        <file>images/mine0_0.png</file>
+        <file>images/mine0_1.png</file>
+        <file>images/mine0_2.png</file>
+        <file>images/mine0_3.png</file>
+        <file>images/mine0_4.png</file>
+        <file>images/mine0_5.png</file>
+        <file>images/mine0_6.png</file>
+        <file>images/mine0_7.png</file>
+        <file>images/mine0_8.png</file>
+        <file>images/time.wav</file>
+        <file>images/win.wav</file>
+        <file>images/flag1.png</file>
+        <file>images/interrogation1_0.png</file>
+        <file>images/CXK1.png</file>
+    </qresource>
+</RCC>
