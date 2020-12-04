@@ -24,25 +24,25 @@ typedef struct Student
 typedef Student* Stulist;
 
 Status Inserlist(Linklist* Lp);
-Status Inserstulist(Stulist* Sp);//²åÈëÁªÏµÈË
-void Initstulist(Stulist* Sp, Node* Lp);//¶ÔÁ´±í½øĞĞ³õÊ¼»¯
+Status Inserstulist(Stulist* Sp);//æ’å…¥è”ç³»äºº
+void Initstulist(Stulist* Sp, Node* Lp);//å¯¹é“¾è¡¨è¿›è¡Œåˆå§‹åŒ–
 void mydisplay(Linklist* Lp);
-void studisplay(Stulist* Sp);//ÏÔÊ¾Í¨Ñ¶Â¼
+void studisplay(Stulist* Sp);//æ˜¾ç¤ºé€šè®¯å½•
 void Deletelist();
-void Deletestulist(Stulist* Sp);//É¾³ıÁªÏµÈË
+void Deletestulist(Stulist* Sp);//åˆ é™¤è”ç³»äºº
 Status Findlist(Linklist* Lp);
-Status Findstulist(Stulist* Sp);//²éÕÒÁªÏµÈË
+Status Findstulist(Stulist* Sp);//æŸ¥æ‰¾è”ç³»äºº
 void Reviselist();
-void Revisestulist(Stulist* Sp);//ĞŞ¸ÄÁªÏµÈË
-Status Sortlist();//¶ÔÍ¨Ñ¶Â¼½øĞĞÅÅĞò
-void studisplay(Linklist* Lp);//½øÈëÍ¬Ñ§
+void Revisestulist(Stulist* Sp);//ä¿®æ”¹è”ç³»äºº
+Status Sortlist();//å¯¹é€šè®¯å½•è¿›è¡Œæ’åº
+void studisplay(Linklist* Lp);//è¿›å…¥åŒå­¦
 void begain(Stulist* Sp);
 
-/*£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª³õÊ¼»¯£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª*/ 
+/*ï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šåˆå§‹åŒ–ï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Š*/ 
 void Initstulist(Stulist* Sp, Linklist* Lp) {
 	Student* sp = (Student*)malloc(sizeof(Student));
 	if (sp == NULL) {
-		printf("ÉêÇëÊ§°Ü");
+		printf("ç”³è¯·å¤±è´¥");
 		return;
 	}
 	else
@@ -53,7 +53,7 @@ void Initstulist(Stulist* Sp, Linklist* Lp) {
 		Node* p = (Node*)malloc(sizeof(Node));
 		if (p == NULL)
 		{
-			printf("ÉêÇëÊ§°Ü");
+			printf("ç”³è¯·å¤±è´¥");
 			return;
 		}
 		else
@@ -65,14 +65,14 @@ void Initstulist(Stulist* Sp, Linklist* Lp) {
 		}
 	}
 }
-/*£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ªÌí¼ÓÁªÏµÈË£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª*/
-Status Inserlist(Linklist* Lp)//Ìí¼ÓÁªÏµÈË
+/*ï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šæ·»åŠ è”ç³»äººï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Š*/
+Status Inserlist(Linklist* Lp)//æ·»åŠ è”ç³»äºº
 {
 	Linklist L = *Lp;
 	Node* p = (Node*)malloc(sizeof(Node));
 	if (p == NULL)
 	{
-		printf("ÉêÇëÊ§°Ü");
+		printf("ç”³è¯·å¤±è´¥");
 		return FALSE;
 	}
 	else
@@ -80,11 +80,11 @@ Status Inserlist(Linklist* Lp)//Ìí¼ÓÁªÏµÈË
 		Elemtype a[MAXSIZE];
 		Elemtype b[MAXSIZE];
 		Elemtype c[MAXSIZE];
-		printf("ÇëÊäÈëÒª±£´æµÄÁªÏµÈËÃû×Ö:\n");
+		printf("è¯·è¾“å…¥è¦ä¿å­˜çš„è”ç³»äººåå­—:\n");
 		scanf_s("%s", a, 20);
-		printf("ÇëÊäÈëÒª±£´æµÄÁªÏµÈËºÅÂë:\n");
+		printf("è¯·è¾“å…¥è¦ä¿å­˜çš„è”ç³»äººå·ç :\n");
 		scanf_s("%s", b, 20);
-		printf("ÇëÊäÈëÒª±£³ÖµÄÁªÏµÈËĞÔ±ğ:\n");
+		printf("è¯·è¾“å…¥è¦ä¿æŒçš„è”ç³»äººæ€§åˆ«:\n");
 		scanf_s("%s", c, 20);
 
 		while (L != NULL && L->next != NULL)
@@ -98,14 +98,14 @@ Status Inserlist(Linklist* Lp)//Ìí¼ÓÁªÏµÈË
 		p->next = NULL;
 	}
 }
-Status Inserstulist(Stulist* Sp)//Ìí¼ÓÁªÏµÈË
+Status Inserstulist(Stulist* Sp)//æ·»åŠ è”ç³»äºº
 {
 	Stulist L = *Sp;
 	Student* sp = (Student*)malloc(sizeof(Student));
 	Node* p = (Node*)malloc(sizeof(Node));
 	if (p == NULL)
 	{
-		printf("ÉêÇëÊ§°Ü");
+		printf("ç”³è¯·å¤±è´¥");
 		return 0;
 	}
 	else
@@ -116,13 +116,13 @@ Status Inserstulist(Stulist* Sp)//Ìí¼ÓÁªÏµÈË
 	}
 	if (sp == NULL)
 	{
-		printf("ÉêÇëÊ§°Ü");
+		printf("ç”³è¯·å¤±è´¥");
 		return FALSE;
 	}
 	else
 	{
 		Elemtype a[MAXSIZE];
-		printf("ÇëÊäÈëÒª±£´æµÄÍ¬Ñ§Ãû×Ö:\n");
+		printf("è¯·è¾“å…¥è¦ä¿å­˜çš„åŒå­¦åå­—:\n");
 		scanf_s("%s", a, 20);
 		while (L != NULL && L->next != NULL)
 		{
@@ -133,10 +133,10 @@ Status Inserstulist(Stulist* Sp)//Ìí¼ÓÁªÏµÈË
 		sp->next = NULL;
 	}
 }
-/*£ª£ª£ª£ª£ª£ª£ª£ª£ª£ªÏÔÊ¾Í¨Ñ¶Â¼£ª£ª£ª£ª£ª£ª£ª£ª*/
-void mydisplay(Linklist* Lp)//ÏÔÊ¾Í¨Ñ¶Â¼
+/*ï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šæ˜¾ç¤ºé€šè®¯å½•ï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Š*/
+void mydisplay(Linklist* Lp)//æ˜¾ç¤ºé€šè®¯å½•
 {
-	printf("ĞÕÃû           ºÅÂë          ĞÔ±ğ \n");
+	printf("å§“å           å·ç           æ€§åˆ« \n");
 	Linklist l = (*Lp)->next;
 	while (l != NULL)
 	{
@@ -144,9 +144,9 @@ void mydisplay(Linklist* Lp)//ÏÔÊ¾Í¨Ñ¶Â¼
 		l = l->next;
 	}
 }
-void studisplay(Stulist* Sp)//ÏÔÊ¾Í¨Ñ¶Â¼
+void studisplay(Stulist* Sp)//æ˜¾ç¤ºé€šè®¯å½•
 {
-	printf("ĞÕÃû           ºÅÂë          ĞÔ±ğ \n");
+	printf("å§“å           å·ç           æ€§åˆ« \n");
 	Stulist stu = (*Sp)->next;
 	while (stu != NULL)
 	{
@@ -154,16 +154,16 @@ void studisplay(Stulist* Sp)//ÏÔÊ¾Í¨Ñ¶Â¼
 		stu = stu->next;
 	}
 }
-//½øÈë 
+//è¿›å…¥ 
 void mystudisplay(Linklist* Lp) {
 
 }
-/*£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª²éÕÒÁªÏµÈË£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª*/
-Status Findlist(Linklist* Lp)//²éÕÒÁªÏµÈË
+/*ï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼ŠæŸ¥æ‰¾è”ç³»äººï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Š*/
+Status Findlist(Linklist* Lp)//æŸ¥æ‰¾è”ç³»äºº
 {
 	int c = 0;
 	int sel;
-	printf("ÇëÊäÈë²éÑ¯·½Ê½£º\n 1:°´ĞÕÃû²éÑ¯\n 2:°´µç»°ºÅÂë²éÑ¯\n");
+	printf("è¯·è¾“å…¥æŸ¥è¯¢æ–¹å¼ï¼š\n 1:æŒ‰å§“åæŸ¥è¯¢\n 2:æŒ‰ç”µè¯å·ç æŸ¥è¯¢\n");
 	Elemtype a[MAXSIZE];
 	Elemtype b[MAXSIZE];
 	while (1)
@@ -175,13 +175,13 @@ Status Findlist(Linklist* Lp)//²éÕÒÁªÏµÈË
 		switch (sel)
 		{
 		case 1:
-			printf("ÇëÊäÈëÒª²éÑ¯µÄÁªÏµÈËĞÕÃû:\n");
+			printf("è¯·è¾“å…¥è¦æŸ¥è¯¢çš„è”ç³»äººå§“å:\n");
 			scanf_s("%s", a, 20);
 			while (p != NULL)
 			{
 				if (strcmp(p->name, a) == 0)
 				{
-					printf("ĞÕÃû           ºÅÂë          ĞÔ±ğ\n");
+					printf("å§“å           å·ç           æ€§åˆ«\n");
 					printf("%-15s%-15s%-15s\n", p->name, p->number, p->sex);
 					c = 1;
 				}
@@ -189,18 +189,18 @@ Status Findlist(Linklist* Lp)//²éÕÒÁªÏµÈË
 			}
 			if (c == 0)
 			{
-				printf("¸ÃÁªÏµÈË²»´æÔÚµÄÓ´£¡\n");
+				printf("è¯¥è”ç³»äººä¸å­˜åœ¨çš„å“Ÿï¼\n");
 			}
 			return 0;
 
 		case 2:
-			printf("ÇëÊäÈëÒª²éÑ¯ÈËµÄµç»°ºÅÂë:\n");
+			printf("è¯·è¾“å…¥è¦æŸ¥è¯¢äººçš„ç”µè¯å·ç :\n");
 			scanf_s("%s", b, 20);
 			while (q != NULL)
 			{
 				if (strcmp(q->number, b) == 0)
 				{
-					printf("ĞÕÃû           ºÅÂë          ĞÔ±ğ\n");
+					printf("å§“å           å·ç           æ€§åˆ«\n");
 					printf("%-15s%-15s%-15s\n", q->name, q->number, q->sex);
 					c = 1;
 				}
@@ -208,17 +208,17 @@ Status Findlist(Linklist* Lp)//²éÕÒÁªÏµÈË
 			}
 			if (c == 0)
 			{
-				printf("¸Ãµç»°ºÅÂë²»´æÔÚµÄÓ´£¡\n");
+				printf("è¯¥ç”µè¯å·ç ä¸å­˜åœ¨çš„å“Ÿï¼\n");
 			}
 			return 0;
 
 		default:
-			printf("ÎŞ´Ë²éÑ¯·½Ê½\n");
+			printf("æ— æ­¤æŸ¥è¯¢æ–¹å¼\n");
 			return 0;
 		}
 	}
 }
-Status Findstulist(Stulist* Sp)//²éÕÒÍ¬Ñ§
+Status Findstulist(Stulist* Sp)//æŸ¥æ‰¾åŒå­¦
 {  
 	int c = 0;
 	Elemtype a[MAXSIZE];
@@ -228,13 +228,13 @@ Status Findstulist(Stulist* Sp)//²éÕÒÍ¬Ñ§
 		getchar();
 		Stulist p = (*Sp)->next;
 		Stulist q = (*Sp)->next;
-			printf("ÇëÊäÈëÒª²éÑ¯µÄÍ¬Ñ§ĞÕÃû:\n");
+			printf("è¯·è¾“å…¥è¦æŸ¥è¯¢çš„åŒå­¦å§“å:\n");
 			scanf_s("%s", a, 20);
 			while (p != NULL)
 			{
 				if (strcmp(p->name, a) == 0)
 				{
-					printf("ĞÕÃû");
+					printf("å§“å");
 					printf("%-15s%\n", p->name);
 					c = 1;
 				}
@@ -242,22 +242,22 @@ Status Findstulist(Stulist* Sp)//²éÕÒÍ¬Ñ§
 			}
 			if (c == 0)
 			{
-				printf("¸ÃÁªÏµÈË²»´æÔÚµÄÓ´£¡\n");
+				printf("è¯¥è”ç³»äººä¸å­˜åœ¨çš„å“Ÿï¼\n");
 			}
 			return 0;
 	}
 }
-void Deletelist(Linklist* Lp)//É¾³ıÁªÏµÈË
+void Deletelist(Linklist* Lp)//åˆ é™¤è”ç³»äºº
 {
 	if ((*Lp)->next == NULL)
 	{
-		printf("µ±Ç°Í¨Ñ¶Â¼Îª¿Õ£¬ÎŞ·¨Ö´ĞĞ£¡\n");
+		printf("å½“å‰é€šè®¯å½•ä¸ºç©ºï¼Œæ— æ³•æ‰§è¡Œï¼\n");
 	}
 	else
 	{
 		int b = 0;
 		Elemtype a[MAXSIZE];
-		printf("ÇëÊäÈëÒªÉ¾³ıµÄÁªÏµÈË\n");
+		printf("è¯·è¾“å…¥è¦åˆ é™¤çš„è”ç³»äºº\n");
 		scanf_s("%s", a, 20);
 		Linklist q;
 		Linklist p = *Lp;
@@ -272,21 +272,21 @@ void Deletelist(Linklist* Lp)//É¾³ıÁªÏµÈË
 			}
 			p = p->next;
 		}
-		if (b == 0)//ÅĞ¶ÏÑ­»·ÊÇ·ñÖ´ĞĞ£¬Ã»Ö´ĞĞµÄ»°£¬ËµÃ÷¸ÃÁªÏµÈË²»´æÔÚ¡£
-			printf("¸ÃÁªÏµÈË²»´æÔÚµÄÓ´£¡\n");
+		if (b == 0)//åˆ¤æ–­å¾ªç¯æ˜¯å¦æ‰§è¡Œï¼Œæ²¡æ‰§è¡Œçš„è¯ï¼Œè¯´æ˜è¯¥è”ç³»äººä¸å­˜åœ¨ã€‚
+			printf("è¯¥è”ç³»äººä¸å­˜åœ¨çš„å“Ÿï¼\n");
 	}
 }
-void Deletestulist(Stulist* Sp)//É¾³ıÍ¬Ñ§ÈË
+void Deletestulist(Stulist* Sp)//åˆ é™¤åŒå­¦äºº
 {
 	if ((*Sp)->next == NULL)
 	{
-		printf("µ±Ç°°à¼¶Í¬Ñ§Îª¿Õ£¬ÎŞ·¨Ö´ĞĞ£¡\n");
+		printf("å½“å‰ç­çº§åŒå­¦ä¸ºç©ºï¼Œæ— æ³•æ‰§è¡Œï¼\n");
 	}
 	else
 	{
 		int b = 0;
 		Elemtype a[MAXSIZE];
-		printf("ÇëÊäÈëÒªÉ¾³ıµÄÍ¬Ñ§\n");
+		printf("è¯·è¾“å…¥è¦åˆ é™¤çš„åŒå­¦\n");
 		scanf_s("%s", a, 20);
 		Stulist q;
 		Stulist p = *Sp;
@@ -301,24 +301,24 @@ void Deletestulist(Stulist* Sp)//É¾³ıÍ¬Ñ§ÈË
 			}
 			p = p->next;
 		}
-		if (b == 0)//ÅĞ¶ÏÑ­»·ÊÇ·ñÖ´ĞĞ£¬Ã»Ö´ĞĞµÄ»°£¬ËµÃ÷¸ÃÁªÏµÈË²»´æÔÚ¡£
-			printf("¸ÃÍ¬Ñ§²»´æÔÚµÄÓ´£¡\n");
+		if (b == 0)//åˆ¤æ–­å¾ªç¯æ˜¯å¦æ‰§è¡Œï¼Œæ²¡æ‰§è¡Œçš„è¯ï¼Œè¯´æ˜è¯¥è”ç³»äººä¸å­˜åœ¨ã€‚
+			printf("è¯¥åŒå­¦ä¸å­˜åœ¨çš„å“Ÿï¼\n");
 	}
 }
 
 
-/*£ª£ª£ª£ª£ª£ª£ª£ª£ª£ªĞŞ¸ÄÁªÏµÈË£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª*/
-void Reviselist(Linklist* Lp)//ĞŞ¸ÄÁªÏµÈË
+/*ï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šä¿®æ”¹è”ç³»äººï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Š*/
+void Reviselist(Linklist* Lp)//ä¿®æ”¹è”ç³»äºº
 {
 	Node* q = (Node*)malloc(sizeof(Node));
 	if (q == NULL)
 	{
-		printf("ÉêÇëÊ§°Ü");
+		printf("ç”³è¯·å¤±è´¥");
 	}
 
 	if ((*Lp)->next == NULL)
 	{
-		printf("µ±Ç°Í¨Ñ¶Â¼Îª¿Õ£¬ÎŞ·¨Ö´ĞĞ£¡\n");
+		printf("å½“å‰é€šè®¯å½•ä¸ºç©ºï¼Œæ— æ³•æ‰§è¡Œï¼\n");
 	}
 	else
 	{
@@ -327,7 +327,7 @@ void Reviselist(Linklist* Lp)//ĞŞ¸ÄÁªÏµÈË
 		Elemtype b[MAXSIZE];
 		Elemtype c[MAXSIZE];
 		Elemtype d[MAXSIZE];
-		printf("ÇëÊäÈëÒªĞŞ¸ÄµÄÁªÏµÈËĞÕÃû:\n");
+		printf("è¯·è¾“å…¥è¦ä¿®æ”¹çš„è”ç³»äººå§“å:\n");
 		scanf_s("%s", a, 20);
 		Linklist h;
 		Linklist p = *Lp;
@@ -336,11 +336,11 @@ void Reviselist(Linklist* Lp)//ĞŞ¸ÄÁªÏµÈË
 		{
 			if (strcmp(p->next->name, a) == 0)
 			{
-				printf("ÇëÊäÈëĞŞ¸ÄºóµÄÁªÏµÈËĞÕÃû:\n");
+				printf("è¯·è¾“å…¥ä¿®æ”¹åçš„è”ç³»äººå§“å:\n");
 				scanf_s("%s", b, 20);
-				printf("ÇëÊäÈëĞŞ¸ÄºóµÄÁªÏµÈËºÅÂë:\n");
+				printf("è¯·è¾“å…¥ä¿®æ”¹åçš„è”ç³»äººå·ç :\n");
 				scanf_s("%s", c, 20);
-				printf("ÇëÊäÈëĞŞ¸ÄºóµÄÁªÏµÈËĞÔ±ğ:\n");
+				printf("è¯·è¾“å…¥ä¿®æ”¹åçš„è”ç³»äººæ€§åˆ«:\n");
 				scanf_s("%s", d, 20);
 				strcpy_s(q->name, b);
 				strcpy_s(q->number, c);
@@ -355,28 +355,28 @@ void Reviselist(Linklist* Lp)//ĞŞ¸ÄÁªÏµÈË
 			p = p->next;
 		}
 		if (i == 0)
-			printf("ÄãÒªĞŞ¸ÄµÄÁªÏµÈË²»´æÔÚµÄÓ´£¡\n");
+			printf("ä½ è¦ä¿®æ”¹çš„è”ç³»äººä¸å­˜åœ¨çš„å“Ÿï¼\n");
 	}
 }
 
-void Revisestulist(Stulist* Sp)//ĞŞ¸ÄÍ¬Ñ§
+void Revisestulist(Stulist* Sp)//ä¿®æ”¹åŒå­¦
 {
 	Student* q = (Student*)malloc(sizeof(Student));
 	if (q == NULL)
 	{
-		printf("ÉêÇëÊ§°Ü");
+		printf("ç”³è¯·å¤±è´¥");
 	}
 
 	if ((*Sp)->next == NULL)
 	{
-		printf("µ±Ç°Í¨Ñ¶Â¼Îª¿Õ£¬ÎŞ·¨Ö´ĞĞ£¡\n");
+		printf("å½“å‰é€šè®¯å½•ä¸ºç©ºï¼Œæ— æ³•æ‰§è¡Œï¼\n");
 	}
 	else
 	{
 		int i = 0;
 		Elemtype a[MAXSIZE];
 		Elemtype b[MAXSIZE];
-		printf("ÇëÊäÈëÒªĞŞ¸ÄµÄÁªÏµÈËĞÕÃû:\n");
+		printf("è¯·è¾“å…¥è¦ä¿®æ”¹çš„è”ç³»äººå§“å:\n");
 		scanf_s("%s", a, 20);
 		Stulist h;
 		Stulist p = *Sp;
@@ -385,7 +385,7 @@ void Revisestulist(Stulist* Sp)//ĞŞ¸ÄÍ¬Ñ§
 		{
 			if (strcmp(p->next->name, a) == 0)
 			{
-				printf("ÇëÊäÈëĞŞ¸ÄºóµÄÁªÏµÈËĞÕÃû:\n");
+				printf("è¯·è¾“å…¥ä¿®æ”¹åçš„è”ç³»äººå§“å:\n");
 				scanf_s("%s", b, 20);
 				strcpy_s(q->name, b);
 				h = p->next;
@@ -398,15 +398,15 @@ void Revisestulist(Stulist* Sp)//ĞŞ¸ÄÍ¬Ñ§
 			p = p->next;
 		}
 		if (i == 0)
-			printf("ÄãÒªĞŞ¸ÄµÄÍ¬Ñ§²»´æÔÚµÄÓ´£¡\n");
+			printf("ä½ è¦ä¿®æ”¹çš„åŒå­¦ä¸å­˜åœ¨çš„å“Ÿï¼\n");
 	}
 }
-/*£ª£ª£ª£ª£ª£ª£ª£ª£ª¶ÔÁªÏµÈË½øĞĞÅÅĞò£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª*/
-Status Sortlist(Linklist* Lp)//Ê¹ÓÃÃ°ÅİÅÅĞò¶ÔÍ¨Ñ¶Â¼½øĞĞÅÅĞò
+/*ï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šå¯¹è”ç³»äººè¿›è¡Œæ’åºï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Šï¼Š*/
+Status Sortlist(Linklist* Lp)//ä½¿ç”¨å†’æ³¡æ’åºå¯¹é€šè®¯å½•è¿›è¡Œæ’åº
 {
 	if (*Lp == NULL)
 	{
-		printf("µ±Ç°Í¨Ñ¶Â¼Îª¿Õ£¡\n");
+		printf("å½“å‰é€šè®¯å½•ä¸ºç©ºï¼\n");
 		return FALSE;
 	}
 	char name[20];
@@ -437,7 +437,7 @@ Status Sortlist(Linklist* Lp)//Ê¹ÓÃÃ°ÅİÅÅĞò¶ÔÍ¨Ñ¶Â¼½øĞĞÅÅĞò
 		r = r->next;
 	}
 
-	printf("ĞÕÃû           ºÅÂë          ĞÔ±ğ\n");
+	printf("å§“å           å·ç           æ€§åˆ«\n");
 	Linklist l = (*Lp)->next;
 	while (l != NULL)
 	{
@@ -449,7 +449,7 @@ Status Sortlist(Linklist* Lp)//Ê¹ÓÃÃ°ÅİÅÅĞò¶ÔÍ¨Ñ¶Â¼½øĞĞÅÅĞò
 }
 
 void mystudisplay(Stulist *Sp) {
-		printf("ÇëÊäÈëÒª²éÑ¯µÄÍ¬Ñ§ĞÕÃû:\n");
+		printf("è¯·è¾“å…¥è¦æŸ¥è¯¢çš„åŒå­¦å§“å:\n");
 	Student* sp = *Sp;
 	int c = 0;
 	Elemtype a[MAXSIZE];
@@ -463,28 +463,28 @@ void mystudisplay(Stulist *Sp) {
 		{
 			if (strcmp(p->name, a) == 0)
 			{
-				printf("ĞÕÃû");
+				printf("å§“å");
 				printf("%-15s%\n", p->name);
 				c = 1;
 				sp = p;
 				while (1) {
 					int se1;
 					printf("\t\tmenu: \n");
-					printf("\t\t1:Ìí¼ÓÁªÏµÈË\n");
-					printf("\t\t2:²éÕÒÁªÏµÈË\n");
-					printf("\t\t3:É¾³ıÁªÏµÈË\n");
-					printf("\t\t4:ĞŞ¸ÄÁªÏµÈË\n");
-					printf("\t\t5:ÏÔÊ¾ÁªÏµÈË\n");
-					printf("\t\t6:¶ÔÍ¨Ñ¶Â¼½øĞĞÅÅĞò\n");
-					printf("\t\t7:ÍË³öÍ¨Ñ¶Â¼\n");
-					printf("ÇëÊäÈëÒªÖ´ĞĞµÄ¹¦ÄÜËù¶ÔÓ¦µÄĞòºÅ£¬ÒÔ»Ø³µ¼ü½áÊø£¡\n");
+					printf("\t\t1:æ·»åŠ è”ç³»äºº\n");
+					printf("\t\t2:æŸ¥æ‰¾è”ç³»äºº\n");
+					printf("\t\t3:åˆ é™¤è”ç³»äºº\n");
+					printf("\t\t4:ä¿®æ”¹è”ç³»äºº\n");
+					printf("\t\t5:æ˜¾ç¤ºè”ç³»äºº\n");
+					printf("\t\t6:å¯¹é€šè®¯å½•è¿›è¡Œæ’åº\n");
+					printf("\t\t7:é€€å‡ºé€šè®¯å½•\n");
+					printf("è¯·è¾“å…¥è¦æ‰§è¡Œçš„åŠŸèƒ½æ‰€å¯¹åº”çš„åºå·ï¼Œä»¥å›è½¦é”®ç»“æŸï¼\n");
 					scanf_s("%d", &se1, 20);
 					getchar();
 					switch (se1)
 					{
 					case 1:
 						Inserlist(&sp->Next);
-						printf("*************************\n");//ÎŞÊµ¼ÊÒâÒå£¬½öÎªÊä³ö½çÃæÃÀ»¯
+						printf("*************************\n");//æ— å®é™…æ„ä¹‰ï¼Œä»…ä¸ºè¾“å‡ºç•Œé¢ç¾åŒ–
 						break;
 					case 2:
 						Findlist(&sp->Next);
@@ -520,7 +520,7 @@ void mystudisplay(Stulist *Sp) {
 		}
 		if (c == 0)
 		{
-			printf("¸ÃÁªÏµÈË²»´æÔÚµÄÓ´£¡\n");
+			printf("è¯¥è”ç³»äººä¸å­˜åœ¨çš„å“Ÿï¼\n");
 		}
 	}
 	
@@ -531,21 +531,21 @@ void begain(Stulist* Sp) {
 	int se2;
 	Elemtype a[MAXSIZE], b[MAXSIZE];
 	while (1) {
-		printf("\t\t1:Ìí¼ÓÍ¬Ñ§\n");
-		printf("\t\t2:²éÕÒÍ¬Ñ§\n");
-		printf("\t\t3:É¾³ıÍ¬Ñ§\n");
-		printf("\t\t4:ĞŞ¸ÄÍ¬Ñ§\n");
-		printf("\t\t5:ÏÔÊ¾Í¬Ñ§\n");
-		printf("\t\t6:½øÈëÍ¬Ñ§\n");
-		printf("\t\t7:ÍË³öÍ¬Ñ§\n");
-		printf("ÇëÊäÈëÒªÖ´ĞĞµÄ¹¦ÄÜËù¶ÔÓ¦µÄĞòºÅ£¬ÒÔ»Ø³µ¼ü½áÊø£¡\n");
+		printf("\t\t1:æ·»åŠ åŒå­¦\n");
+		printf("\t\t2:æŸ¥æ‰¾åŒå­¦\n");
+		printf("\t\t3:åˆ é™¤åŒå­¦\n");
+		printf("\t\t4:ä¿®æ”¹åŒå­¦\n");
+		printf("\t\t5:æ˜¾ç¤ºåŒå­¦\n");
+		printf("\t\t6:è¿›å…¥åŒå­¦\n");
+		printf("\t\t7:é€€å‡ºåŒå­¦\n");
+		printf("è¯·è¾“å…¥è¦æ‰§è¡Œçš„åŠŸèƒ½æ‰€å¯¹åº”çš„åºå·ï¼Œä»¥å›è½¦é”®ç»“æŸï¼\n");
 		scanf_s("%d", &se2, 20);
 		getchar();
 		switch (se2)
 		{
 		case 1:
 			Inserstulist(&sp);
-			printf("*************************\n");//ÎŞÊµ¼ÊÒâÒå£¬½öÎªÊä³ö½çÃæÃÀ»¯
+			printf("*************************\n");//æ— å®é™…æ„ä¹‰ï¼Œä»…ä¸ºè¾“å‡ºç•Œé¢ç¾åŒ–
 			break;
 		case 2:
 			Findstulist(&sp);
@@ -570,7 +570,7 @@ void begain(Stulist* Sp) {
 		case 7:
 			printf("*************************\n");
 			system("clear");
-			printf("³É¹¦ÍË³ö£¡\nÁªÏµÈËÒÑ±£´æ£¡\n");
+			printf("æˆåŠŸé€€å‡ºï¼\nè”ç³»äººå·²ä¿å­˜ï¼\n");
 
 		default:
 			break;
